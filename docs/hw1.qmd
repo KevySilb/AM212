@@ -10,7 +10,7 @@ author:
       - name: University of California Santa Cruz
         city: Santa Cruz
         state: CA
-        url: www.ucsc.edu
+        href: www.ucsc.edu
 format:
   html:
     theme: cosmo
@@ -28,6 +28,7 @@ A mass-spring system is subject to a small damping proportional to the cubed pow
 	M\frac{d^2x}{dt^2} = -\frac{\Lambda}{L}x -K\bigg(\frac{dx}{dt}\bigg)^3
 \end{equation}
 
+## Non-dimensionalize Equation
 Let us non-dimensionalize (\ref{eq:nondim}). 
 
 Let 

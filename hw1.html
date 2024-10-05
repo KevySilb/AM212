@@ -76,7 +76,10 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#problem-definition" id="toc-problem-definition" class="nav-link active" data-scroll-target="#problem-definition">Problem definition</a></li>
+  <li><a href="#problem-definition" id="toc-problem-definition" class="nav-link active" data-scroll-target="#problem-definition">Problem definition</a>
+  <ul class="collapse">
+  <li><a href="#non-dimensionalize-equation" id="toc-non-dimensionalize-equation" class="nav-link" data-scroll-target="#non-dimensionalize-equation">Non-dimensionalize Equation</a></li>
+  </ul></li>
   </ul>
 <div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/KevySilb/AM212"><i class="bi bi-github"></i></a></li></ul></div></nav>
 </div>
@@ -97,9 +100,7 @@ window.Quarto = {
   </div>
   <div class="quarto-title-meta-contents">
         <p class="affiliation">
-            <a href="www.ucsc.edu">
             University of California Santa Cruz
-            </a>
           </p>
       </div>
   </div>
@@ -128,6 +129,8 @@ window.Quarto = {
 <p><span class="math display">\[\begin{equation}\tag{1}\label{eq:nondim}
     M\frac{d^2x}{dt^2} = -\frac{\Lambda}{L}x -K\bigg(\frac{dx}{dt}\bigg)^3
 \end{equation}\]</span></p>
+<section id="non-dimensionalize-equation" class="level2">
+<h2 class="anchored" data-anchor-id="non-dimensionalize-equation">Non-dimensionalize Equation</h2>
 <p>Let us non-dimensionalize (<span class="math inline">\(\ref{eq:nondim}\)</span>).</p>
 <p>Let <span class="math display">\[\begin{align}
     \hat{x} &amp;= \frac{x}{x_s} \Longrightarrow x = \hat{x}x_s \\
@@ -148,6 +151,7 @@ window.Quarto = {
     \frac{d^2\hat{x}}{d\hat{t}^2} + \hat{x} = -\epsilon\bigg(\frac{d\hat{x}}{d\hat{t}}\bigg)^3
 \end{equation}\]</span></p>
 <p>where <span class="math inline">\(\epsilon = \frac{1}{\tau}\)</span></p>
+</section>
 </section>
 
 </main>
