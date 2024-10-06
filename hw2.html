@@ -194,14 +194,55 @@ window.Quarto = {
 <p>Let</p>
 <p><span class="math display">\[\begin{align}
     u(x, t) &amp;= X(x)T(t) \\
-    u_t &amp;= XT_t \\
-    u_{xx} &amp;= X_{xx}T
+    u_t &amp;= XT' \\
+    u_{xx} &amp;= X''T
 \end{align}\]</span></p>
 <p>Plugging into <span class="math inline">\(\ref{eq:ibvp}\)</span></p>
 <p><span class="math display">\[\begin{align}
-    XT_t &amp;= kX_{xx}T - \alpha XT \\
-    \frac{T_t}{T} &amp;= \frac{kX_{xx}}{X} - \alpha
+    XT' &amp;= kX''T - \alpha XT \\
+    \frac{T'}{kT} - \frac{\alpha}{k} &amp;= \frac{X''}{X} = \lambda
 \end{align}\]</span></p>
+<p>The solution of the eigen-value problem <span class="math inline">\(X''(x) = \lambda X(x),  X(0) = X(L) = 0\)</span> is</p>
+<p><span class="math display">\[\begin{align}
+    X_n(x) = \sin{(\frac{n\pi x}{L})}  &amp;&amp; \lambda_n = -\big(\frac{n\pi}{L}\big)^2 &amp;&amp; n = 1, 2, 3, ...
+\end{align}\]</span></p>
+<p>Solving for the IVP:</p>
+<p><span class="math display">\[T' = \lambda_n kT + \alpha T\]</span></p>
+<p>Let <span class="math inline">\(T_n(t) = e^{rt}\)</span></p>
+<p>the characteristic polynomial:</p>
+<p><span class="math inline">\(r - \lambda_n k - \alpha = 0\)</span></p>
+<p>with a single root:</p>
+<p><span class="math inline">\(r = \lambda_n k + \alpha\)</span></p>
+<p>thus the solution to the BVP:</p>
+<p><span class="math display">\[u(x, t) = \sum_{n=1}^{\infty} a_n\sin{(\frac{n\pi x}{L})}e^{(-k(\frac{n\pi}{L})^2 + \alpha)t}\]</span></p>
+<p>Applying the initial condition:</p>
+<p><span class="math display">\[\begin{align}
+    u(x, 0) = \sum_{n=1}^{\infty} a_n\sin{(\frac{n\pi x}{L})} &amp;= f(x) \\
+    \int_0^L \sum_{n=1}^{\infty} a_n\sin{(\frac{n\pi x}{L})}\sin{(\frac{m\pi x}{L})}dx &amp;= \int_0^Lf(x)\sin{(\frac{m\pi x}{L})}dx \\
+    \sum_{n=1}^{\infty}\int_0^L a_n\sin{(\frac{n\pi x}{L})}\sin{(\frac{m\pi x}{L})}dx &amp;= \int_0^Lf(x)\sin{(\frac{m\pi x}{L})}dx
+\end{align}\]</span></p>
+<p>all terms in the integral cancel when <span class="math inline">\(n = m\)</span> (Sturm-Louiville) due to the eigenfunctions forming an orthonormal basis.</p>
+<p>Let us solve for the coefficient <span class="math inline">\(a_n\)</span> on the LHS:</p>
+<p><span class="math display">\[\begin{align}
+    a_n\int_0^L\sin^2{(\frac{n \pi x}{L})}dx \\
+    \text{Let} \ \ u &amp;= \frac{n \pi x}{L} \\
+    \frac{du}{dx} &amp;= \frac{n \pi}{L} \\
+    dx &amp;= \frac{L}{n \pi}du \\
+\end{align}\]</span></p>
+<p><span class="math display">\[\begin{align}
+a_n\frac{L}{n\pi}\int_0^{n \pi}\sin^2{(u)}du &amp;= a_n\frac{L}{n\pi}\bigg[\frac{1}{2}(x - \sin{(x)}\cos{(x)})\bigg\vert_0^{n \pi}\bigg] \\
+&amp;= a_n \frac{L}{2} \\
+a_n &amp;= \frac{2}{L} \int_0^L f(x) \sin{(\frac{n \pi x}{L})}dx
+\end{align}\]</span></p>
+<p>the full solution to the the IBVP of (<span class="math inline">\(\ref{eq:heat}\)</span>) is thus,</p>
+<p><span class="math display">\[\begin{equation}\tag{4}\label{eq:sol}
+    u(x, t) = \sum_{n=1}^{\infty} a_n\sin{(\frac{n\pi x}{L})}e^{(-k(\frac{n\pi}{L})^2 + \alpha)t}
+\end{equation}\]</span></p>
+<p>If we take the limit as (<span class="math inline">\(t \rightarrow \infty\)</span>)</p>
+<p><span class="math display">\[\begin{align}
+    \lim_{t \rightarrow \infty} \bigg[ e^{\alpha t}\sum_{n=1}^{\infty} e^{-k(\frac{n \pi}{L})^2 t}\bigg]
+\end{align}\]</span></p>
+<p>Since <span class="math inline">\(k, L, \alpha\)</span> are all positive real numbers we can clearly see that the limit goes to zero since the infinite sum appraoches <span class="math inline">\(e^{-\infty}\)</span> much faster than <span class="math inline">\(e^{\alpha t}\)</span> approaches <span class="math inline">\(e^{\infty}\)</span></p>
 </section>
 </section>
 </section>

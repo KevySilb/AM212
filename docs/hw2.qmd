@@ -107,13 +107,76 @@ Let
 
 \begin{align}
 	u(x, t) &= X(x)T(t) \\
-	u_t &= XT_t \\
-	u_{xx} &= X_{xx}T
+	u_t &= XT' \\
+	u_{xx} &= X''T
 \end{align}
 
 Plugging into \ref{eq:ibvp}
 
 \begin{align}
-	XT_t &= kX_{xx}T - \alpha XT \\
-	\frac{T_t}{T} &= \frac{kX_{xx}}{X} - \alpha
+	XT' &= kX''T - \alpha XT \\
+	\frac{T'}{kT} - \frac{\alpha}{k} &= \frac{X''}{X} = \lambda
 \end{align}
+
+The solution of the eigen-value problem $X''(x) = \lambda X(x),  X(0) = X(L) = 0$ is 
+
+\begin{align}
+	X_n(x) = \sin{(\frac{n\pi x}{L})}  && \lambda_n = -\big(\frac{n\pi}{L}\big)^2 && n = 1, 2, 3, ...
+\end{align}
+
+Solving for the IVP:
+
+$$T' = \lambda_n kT + \alpha T$$
+
+Let $T_n(t) = e^{rt}$
+
+the characteristic polynomial:
+
+$r - \lambda_n k - \alpha = 0$
+
+with a single root:
+
+$r = \lambda_n k + \alpha$ 
+
+thus the solution to the BVP:
+
+$$u(x, t) = \sum_{n=1}^{\infty} a_n\sin{(\frac{n\pi x}{L})}e^{(-k(\frac{n\pi}{L})^2 + \alpha)t}$$
+
+Applying the initial condition:
+
+\begin{align}
+	u(x, 0) = \sum_{n=1}^{\infty} a_n\sin{(\frac{n\pi x}{L})} &= f(x) \\
+	\int_0^L \sum_{n=1}^{\infty} a_n\sin{(\frac{n\pi x}{L})}\sin{(\frac{m\pi x}{L})}dx &= \int_0^Lf(x)\sin{(\frac{m\pi x}{L})}dx \\
+	\sum_{n=1}^{\infty}\int_0^L a_n\sin{(\frac{n\pi x}{L})}\sin{(\frac{m\pi x}{L})}dx &= \int_0^Lf(x)\sin{(\frac{m\pi x}{L})}dx
+\end{align}
+
+all terms in the integral cancel when $n = m$ (Sturm-Louiville) due to the eigenfunctions forming an orthonormal basis.
+
+Let us solve for the coefficient $a_n$ on the LHS:
+
+\begin{align}
+	a_n\int_0^L\sin^2{(\frac{n \pi x}{L})}dx \\
+	\text{Let} \ \ u &= \frac{n \pi x}{L} \\
+	\frac{du}{dx} &= \frac{n \pi}{L} \\
+	dx &= \frac{L}{n \pi}du \\ 
+\end{align}
+
+\begin{align}
+a_n\frac{L}{n\pi}\int_0^{n \pi}\sin^2{(u)}du &= a_n\frac{L}{n\pi}\bigg[\frac{1}{2}(x - \sin{(x)}\cos{(x)})\bigg\vert_0^{n \pi}\bigg] \\
+&= a_n \frac{L}{2} \\
+a_n &= \frac{2}{L} \int_0^L f(x) \sin{(\frac{n \pi x}{L})}dx
+\end{align}
+
+the full solution to the the IBVP of (\ref{eq:heat}) is thus, 
+
+\begin{equation}\tag{4}\label{eq:sol}
+	u(x, t) = \sum_{n=1}^{\infty} a_n\sin{(\frac{n\pi x}{L})}e^{(-k(\frac{n\pi}{L})^2 + \alpha)t}
+\end{equation}
+
+If we take the limit as ($t \rightarrow \infty$)
+
+\begin{align}
+	\lim_{t \rightarrow \infty} \bigg[ e^{\alpha t}\sum_{n=1}^{\infty} e^{-k(\frac{n \pi}{L})^2 t}\bigg]
+\end{align}
+
+Since $k, L, \alpha$ are all positive real numbers we can clearly see that the limit goes to zero since the infinite sum appraoches $e^{-\infty}$ much faster than $e^{\alpha t}$ approaches $e^{\infty}$
