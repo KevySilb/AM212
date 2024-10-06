@@ -1,0 +1,119 @@
+---
+title: "Homework 2 AM212"
+date: 2024-10-5
+author:
+  - name: Kevin Silberberg
+    id: 1900136
+    orcid: 0009-0009-4825-1865
+    email: ksilberb@ucsc.edu
+    affiliation:
+      - name: University of California Santa Cruz
+        city: Santa Cruz
+        state: CA
+        href: www.ucsc.edu
+format:
+  html:
+    theme: cosmo
+    toc: true
+    code-links:
+      - icon: github
+        href: https://github.com/KevySilb/AM212
+---
+
+# Haberman Exercise 2.3.8
+
+## Problem definition 
+The heat equation with homogenous boundary conditions: 
+
+\begin{equation}\tag{1}\label{eq:heat}
+	\begin{cases}
+		u_t = ku_{xx} - \alpha u \\
+		u(0, t) = 0 \\
+		u(L, t) = 0
+	\end{cases}
+\end{equation}
+
+### Part a
+
+What are the possible equilibrium temperature distributions if $\alpha > 0$?
+
+An equilibrium temperature distribution is such that the time derivative of temperature is zero ($u_t = 0$). Let us solve the homogenous BVP:
+
+\begin{equation}\tag{2}\label{eq:steady}
+	ku_{xx} - \alpha u = 0, u(0) = 0, u(L) = 0
+\end{equation}
+
+Before proceeding it is important to note that $k$ corresponds to the $\textbf{thermal diffusivity}$ of the material and is made of $K_0$ the $\textbf{thermal conductivity}$, $c$ $\textbf{specific heat capacity}$, and $\rho$ $\textbf{mass density}$ such that
+
+$$k = \frac{K_0}{c\rho}$$ where $k > 0$
+
+Let $u(x) = e^{rx}$, the characteristic polynomial becomes:
+
+$kr^2 - \alpha = 0$
+
+where the roots are 
+
+$r = \pm \sqrt{\frac{\alpha}{k}}$
+
+the solution of positive real roots:
+
+$$u(x) = c_1e^{\sqrt{\frac{\alpha}{k}}x} + c_2e^{-{\sqrt{\frac{\alpha}{k}}x}}$$
+
+plugging in the boundary conditions:
+
+\begin{align}
+	&\bigg[\begin{matrix}
+		1 & 1 \\
+		e^{\sqrt{\frac{\alpha}{k}}L} & e^{-\sqrt{\frac{\alpha}{k}}L}
+	\end{matrix}\bigg]
+	\bigg[\begin{matrix}
+		c_1 \\
+		c_2
+	\end{matrix}\bigg] = 
+	\bigg[\begin{matrix}
+		0 \\
+		0
+	\end{matrix}\bigg] \\
+	&\det{\bigg(\bigg[\begin{matrix}
+		1 & 1 \\
+		e^{\sqrt{\frac{\alpha}{k}}L} & e^{-\sqrt{\frac{\alpha}{k}}L}
+	\end{matrix}\bigg]\bigg)} = e^{-\sqrt{\frac{\alpha}{k}}L} - e^{\sqrt{\frac{\alpha}{k}}L} = -2\sinh{(\sqrt{\frac{\alpha}{k}}L)}
+\end{align}
+
+$c_1 = c_2 = 0$
+
+This leaves us with only a trivial solution $u(x) = 0$.
+
+Thus if $\alpha$ is strictly positive the only possible equilibrium temperature distribution is zero everywhere.
+
+### Part b
+
+Solve the time dependent problem with IC $u(x, 0) = f(x)$ if $\alpha > 0$ and analyze temperature as $t \rightarrow \infty$ and compare with part a.
+
+The IBVP:
+
+\begin{equation}\tag{3}\label{eq:ibvp}
+	\begin{cases}
+		u_t = ku_{xx} - \alpha u \\
+		u(x, 0) = f(x) \\
+		u(0, t) = 0 \\
+		u(L, t) = 0
+	\end{cases}
+\end{equation}
+
+#### Separation of variables
+
+Let
+
+\begin{align}
+	u(x, t) &= X(x)T(t) \\
+	u_t &= XT_t \\
+	u_{xx} &= X_{xx}T
+\end{align}
+
+Plugging into \ref{eq:ibvp}
+
+\begin{align}
+	XT_t &= kX_{xx}T - \alpha XT \\
+	\frac{T_t}{T} &= \frac{kX_{xx}}{X} - \alpha
+\end{align}
