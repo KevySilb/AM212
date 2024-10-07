@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
-<meta charset="utf-8">
+<script src="hw2_files/libs/clipboard/clipboard.min.js"></script>
+<script src="hw2_files/libs/quarto-html/quarto.js"></script>
+<script src="hw2_files/libs/quarto-html/popper.min.js"></script>
+<script src="hw2_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="hw2_files/libs/quarto-html/anchor.min.js"></script>
+<link href="hw2_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="hw2_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="hw2_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="hw2_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="hw2_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
@@ -76,7 +84,7 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#haberman-exercise-2.3.8" id="toc-haberman-exercise-2.3.8" class="nav-link active" data-scroll-target="#haberman-exercise-2.3.8">Haberman Exercise 2.3.8</a>
+  <li><a href="#haberman-2.3.8" id="toc-haberman-2.3.8" class="nav-link active" data-scroll-target="#haberman-2.3.8">Haberman 2.3.8</a>
   <ul class="collapse">
   <li><a href="#problem-definition" id="toc-problem-definition" class="nav-link" data-scroll-target="#problem-definition">Problem definition</a>
   <ul class="collapse">
@@ -84,8 +92,16 @@ window.Quarto = {
   <li><a href="#part-b" id="toc-part-b" class="nav-link" data-scroll-target="#part-b">Part b</a></li>
   </ul></li>
   </ul></li>
+  <li><a href="#haberman-4.4.3" id="toc-haberman-4.4.3" class="nav-link" data-scroll-target="#haberman-4.4.3">Haberman 4.4.3</a>
+  <ul class="collapse">
+  <li><a href="#problem-definition-1" id="toc-problem-definition-1" class="nav-link" data-scroll-target="#problem-definition-1">Problem definition</a>
+  <ul class="collapse">
+  <li><a href="#part-a-1" id="toc-part-a-1" class="nav-link" data-scroll-target="#part-a-1">Part a</a></li>
+  <li><a href="#part-b-1" id="toc-part-b-1" class="nav-link" data-scroll-target="#part-b-1">Part b</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
-<div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/KevySilb/AM212"><i class="bi bi-github"></i></a></li></ul></div></nav>
+<div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/KevySilb/AM212"><i class="bi bi-github"></i></a></li></ul></div><div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/KevySilb/AM212"><i class="bi bi-github"></i></a></li></ul></div></nav>
 </div>
 <main class="content" id="quarto-document-content">
 
@@ -127,8 +143,8 @@ window.Quarto = {
 </header>
 
 
-<section id="haberman-exercise-2.3.8" class="level1">
-<h1>Haberman Exercise 2.3.8</h1>
+<section id="haberman-2.3.8" class="level1">
+<h1>Haberman 2.3.8</h1>
 <section id="problem-definition" class="level2">
 <h2 class="anchored" data-anchor-id="problem-definition">Problem definition</h2>
 <p>The heat equation with homogenous boundary conditions:</p>
@@ -243,6 +259,90 @@ a_n &amp;= \frac{2}{L} \int_0^L f(x) \sin{(\frac{n \pi x}{L})}dx
     \lim_{t \rightarrow \infty} \bigg[ e^{\alpha t}\sum_{n=1}^{\infty} e^{-k(\frac{n \pi}{L})^2 t}\bigg]
 \end{align}\]</span></p>
 <p>Since <span class="math inline">\(k, L, \alpha\)</span> are all positive real numbers we can clearly see that the limit goes to zero since the infinite sum appraoches <span class="math inline">\(e^{-\infty}\)</span> much faster than <span class="math inline">\(e^{\alpha t}\)</span> approaches <span class="math inline">\(e^{\infty}\)</span></p>
+</section>
+</section>
+</section>
+</section>
+<section id="haberman-4.4.3" class="level1">
+<h1>Haberman 4.4.3</h1>
+<section id="problem-definition-1" class="level2">
+<h2 class="anchored" data-anchor-id="problem-definition-1">Problem definition</h2>
+<p>Consider a slightly damped vibrating string that satisfies:</p>
+<p><span class="math display">\[\begin{equation}\tag{5}\label{eq:vibstring}
+    \rho_0 \frac{d^2u}{dt^2} = T_0 \frac{d^2u}{dx^2} - \beta \frac{du}{dt}
+\end{equation}\]</span></p>
+<section id="part-a-1" class="level3">
+<h3 class="anchored" data-anchor-id="part-a-1">Part a</h3>
+<p>Why must the parameter <span class="math inline">\(\beta &gt; 0\)</span>?</p>
+<p>The parameter <span class="math inline">\(\beta\)</span> must be positive, because this is the frictional coefficient. If <span class="math inline">\(\beta &lt; 0\)</span> the amplitude of the vibrating string would blow up to infinity as time progresses instead of converging to zero as <span class="math inline">\(t \rightarrow \infty\)</span>.</p>
+</section>
+<section id="part-b-1" class="level3">
+<h3 class="anchored" data-anchor-id="part-b-1">Part b</h3>
+<p>Solve the IBVP:</p>
+<p><span class="math display">\[\begin{align}
+    \begin{cases}
+        \rho_0 \frac{d^2u}{dt^2} = T_0 \frac{d^2u}{dx^2} - \beta \frac{du}{dt} \\
+        u(0, t) = 0 &amp; u(L, t) = 0 \\
+        u(x, 0) = f(x) &amp; \frac{d}{dt}u(x, 0) = g(x)
+    \end{cases}
+\end{align}\]</span></p>
+<section id="let-us-non-dimensionalize-the-problem" class="level4">
+<h4 class="anchored" data-anchor-id="let-us-non-dimensionalize-the-problem">Let us non-dimensionalize the problem</h4>
+<p>Let</p>
+<p><span class="math display">\[\begin{align}
+    &amp;\hat{u} = \frac{u}{u_s} \Longrightarrow u = \hat{u}u_s
+    &amp;\hat{x} = \frac{x}{x_s} \Longrightarrow u = \hat{x}x_s &amp;
+    &amp;\hat{t} = \frac{t}{t_s} \Longrightarrow u = \hat{t}t_s
+\end{align}\]</span></p>
+<p><span class="math display">\[\begin{align}
+    \rho_0 \frac{d^2u}{dt^2} -T_0 \frac{d^2u}{dx^2} +\beta \frac{du}{dt} = 0 \\
+    \frac{\rho_0 u_s}{t_s^2}\frac{d^2\hat{u}}{d\hat{t}^2} - \frac{T_0 u_s}{x_s^2}\frac{d^2\hat{u}}{d\hat{x}^2} + \beta\frac{u_s}{t_s}\big(\frac{d\hat{u}}{d\hat{t}}\big) = 0 \\
+    \frac{d^2\hat{u}}{d\hat{t}^2} - \frac{T_0 t_s^2}{\rho_0 x_s^2}\frac{d^2\hat{u}}{d\hat{x}^2} + \beta\frac{t_s}{\rho_0}\big(\frac{d\hat{u}}{d\hat{t}}\big) = 0
+\end{align}\]</span></p>
+<p>Let</p>
+<p><span class="math display">\[\begin{align}
+    \frac{\beta t_s}{\rho_0} = 1 \\
+    t_s = \tau = \frac{\rho_0}{\beta}
+\end{align}\]</span></p>
+<p>where <span class="math inline">\(\tau\)</span> is the characteristic time scale for (<span class="math inline">\(\ref{eq:vibstring}\)</span>).</p>
+<p><span class="math display">\[\begin{align}
+    \frac{T_0}{\rho_0 x_s^2} = 1 \\
+    x_s = L_c = \sqrt{\frac{T_0}{\rho_0}}
+\end{align}\]</span></p>
+<p>where <span class="math inline">\(L_c\)</span> is the characteristic length scale for (<span class="math inline">\(\ref{eq:vibstring}\)</span>).</p>
+</section>
+<section id="let-us-solve-the-non-dimensionalized-ibvp" class="level4">
+<h4 class="anchored" data-anchor-id="let-us-solve-the-non-dimensionalized-ibvp">Let us solve the non-dimensionalized IBVP</h4>
+<p><span class="math display">\[\begin{equation}\tag{6}\label{eq:nondimvibstring}
+    \begin{cases}
+        u_{tt} + u_t = \tau^2 u_{xx} \\
+        u(0, t) = 0 &amp; u(L, t) = 0 \\
+        u(x, 0) = f(x) &amp; u_t(x, 0) = g(x)
+    \end{cases}
+\end{equation}\]</span></p>
+</section>
+<section id="separation-of-variables-1" class="level4">
+<h4 class="anchored" data-anchor-id="separation-of-variables-1">Separation of variables</h4>
+<p>Let <span class="math inline">\(u(x, t) = X(x) T(t)\)</span></p>
+<p><span class="math display">\[\begin{align}
+    XT'' - XT' = \tau^2 X''T \\
+    \frac{T'' - T'}{\tau^2 T} = \frac{X''}{X} = \lambda
+\end{align}\]</span> The solution to the eigen value problem: <span class="math inline">\(\begin{align}
+    \begin{cases}
+        X'' = \lambda X \\
+        X(0) = X(L) = 0
+    \end{cases}
+\end{align} \Longrightarrow X_n(x) = \sin{(\frac{n \pi x}{L})} \quad n = 1, 2, 3, ...\)</span></p>
+<p>where <span class="math inline">\(\lambda = -\big(\frac{n \pi}{L}\big)^2\)</span></p>
+<p>for the IVP:</p>
+<p><span class="math inline">\(\begin{align}
+    T'' + T' = \tau^2 \lambda T
+\end{align}\)</span></p>
+<p>the characteristic equation becomes:</p>
+<p><span class="math display">\[\begin{align}
+    r^2 + r - \tau^2 \lambda_n = 0 \\
+    r = -\frac{1}{2} \pm \frac{1}{2}\sqrt{1 + 4\tau^2 \lambda_n}
+\end{align}\]</span></p>
 </section>
 </section>
 </section>

@@ -20,7 +20,7 @@ format:
         href: https://github.com/KevySilb/AM212
 ---
 
-# Haberman Exercise 2.3.8
+# Haberman 2.3.8
 
 ## Problem definition 
 The heat equation with homogenous boundary conditions: 
@@ -180,3 +180,107 @@ If we take the limit as ($t \rightarrow \infty$)
 \end{align}
 
 Since $k, L, \alpha$ are all positive real numbers we can clearly see that the limit goes to zero since the infinite sum appraoches $e^{-\infty}$ much faster than $e^{\alpha t}$ approaches $e^{\infty}$
+
+
+# Haberman 4.4.3
+
+## Problem definition 
+
+Consider a slightly damped vibrating string that satisfies: 
+
+\begin{equation}\tag{5}\label{eq:vibstring}
+	\rho_0 \frac{d^2u}{dt^2} = T_0 \frac{d^2u}{dx^2} - \beta \frac{du}{dt}
+\end{equation}
+
+### Part a
+
+Why must the parameter $\beta > 0$?
+
+The parameter $\beta$ must be positive, because this is the frictional coefficient. If $\beta < 0$ the amplitude of the vibrating string would blow up to infinity as time progresses instead of converging to zero as $t \rightarrow \infty$.
+
+### Part b
+
+Solve the IBVP:
+
+\begin{align}
+	\begin{cases}
+		\rho_0 \frac{d^2u}{dt^2} = T_0 \frac{d^2u}{dx^2} - \beta \frac{du}{dt} \\
+		u(0, t) = 0 & u(L, t) = 0 \\
+		u(x, 0) = f(x) & \frac{d}{dt}u(x, 0) = g(x)
+	\end{cases}
+\end{align}
+
+#### Let us non-dimensionalize the problem 
+
+Let 
+
+\begin{align}
+	&\hat{u} = \frac{u}{u_s} \Longrightarrow u = \hat{u}u_s
+	&\hat{x} = \frac{x}{x_s} \Longrightarrow u = \hat{x}x_s &
+	&\hat{t} = \frac{t}{t_s} \Longrightarrow u = \hat{t}t_s
+\end{align}
+
+\begin{align}
+	\rho_0 \frac{d^2u}{dt^2} -T_0 \frac{d^2u}{dx^2} +\beta \frac{du}{dt} = 0 \\
+	\frac{\rho_0 u_s}{t_s^2}\frac{d^2\hat{u}}{d\hat{t}^2} - \frac{T_0 u_s}{x_s^2}\frac{d^2\hat{u}}{d\hat{x}^2} + \beta\frac{u_s}{t_s}\big(\frac{d\hat{u}}{d\hat{t}}\big) = 0 \\
+	\frac{d^2\hat{u}}{d\hat{t}^2} - \frac{T_0 t_s^2}{\rho_0 x_s^2}\frac{d^2\hat{u}}{d\hat{x}^2} + \beta\frac{t_s}{\rho_0}\big(\frac{d\hat{u}}{d\hat{t}}\big) = 0
+\end{align}
+
+Let
+
+\begin{align}
+	\frac{\beta t_s}{\rho_0} = 1 \\
+	t_s = \tau = \frac{\rho_0}{\beta}
+\end{align}
+
+where $\tau$ is the characteristic time scale for (\ref{eq:vibstring}).
+
+\begin{align}
+	\frac{T_0}{\rho_0 x_s^2} = 1 \\
+	x_s = L_c = \sqrt{\frac{T_0}{\rho_0}}
+\end{align}
+
+where $L_c$ is the characteristic length scale for (\ref{eq:vibstring}).
+
+#### Let us solve the non-dimensionalized IBVP
+
+\begin{equation}\tag{6}\label{eq:nondimvibstring}
+	\begin{cases}
+		u_{tt} + u_t = \tau^2 u_{xx} \\
+		u(0, t) = 0 & u(L, t) = 0 \\
+		u(x, 0) = f(x) & u_t(x, 0) = g(x)
+	\end{cases}
+\end{equation}
+
+#### Separation of variables 
+
+Let $u(x, t) = X(x) T(t)$
+
+\begin{align}
+	XT'' - XT' = \tau^2 X''T \\
+	\frac{T'' - T'}{\tau^2 T} = \frac{X''}{X} = \lambda
+\end{align}
+The solution to the eigen value problem:
+$\begin{align}
+	\begin{cases}
+		X'' = \lambda X \\
+		X(0) = X(L) = 0
+	\end{cases}
+\end{align} \Longrightarrow X_n(x) = \sin{(\frac{n \pi x}{L})} \quad n = 1, 2, 3, ...$
+
+where $\lambda = -\big(\frac{n \pi}{L}\big)^2$
+
+for the IVP: 
+
+$\begin{align}
+	T'' + T' = \tau^2 \lambda T
+\end{align}$
+
+the characteristic equation becomes:
+
+\begin{align}
+	r^2 + r - \tau^2 \lambda_n = 0 \\
+	r = -\frac{1}{2} \pm \frac{1}{2}\sqrt{1 + 4\tau^2 \lambda_n}
+\end{align}
+	
+	
