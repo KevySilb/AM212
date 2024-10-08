@@ -20,7 +20,7 @@ format:
         href: https://github.com/KevySilb/AM212
 ---
 
-# Problem definition
+# Bush problem 4 page 23
 
 A mass-spring system is subject to a small damping proportional to the cubed power of speed. The governing equation:
 
@@ -28,7 +28,8 @@ A mass-spring system is subject to a small damping proportional to the cubed pow
 	M\frac{d^2x}{dt^2} = -\frac{\Lambda}{L}x -K\bigg(\frac{dx}{dt}\bigg)^3
 \end{equation}
 
-## Non-dimensionalize Equation
+#### Non-dimensionalize the eqaution (\ref{eq:nondim}) and express $\epsilon$ in terms of the constants of the system.
+
 Let us non-dimensionalize (\ref{eq:nondim}). 
 
 Let 
