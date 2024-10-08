@@ -33,9 +33,9 @@ The heat equation with homogenous boundary conditions:
 	\end{cases}
 \end{equation}
 
-### Part a
+## Part a
 
-What are the possible equilibrium temperature distributions if $\alpha > 0$?
+#### What are the possible equilibrium temperature distributions if $\alpha > 0$?
 
 An equilibrium temperature distribution is such that the time derivative of temperature is zero ($u_t = 0$). Let us solve the homogenous BVP:
 
@@ -86,9 +86,9 @@ This leaves us with only a trivial solution $u(x) = 0$.
 
 Thus if $\alpha$ is strictly positive the only possible equilibrium temperature distribution is zero everywhere.
 
-### Part b
+## Part b
 
-Solve the time dependent problem with IC $u(x, 0) = f(x)$ if $\alpha > 0$ and analyze temperature as $t \rightarrow \infty$ and compare with part a.
+#### Solve the time dependent problem with IC $u(x, 0) = f(x)$ if $\alpha > 0$ and analyze temperature as $t \rightarrow \infty$ and compare with part a.
 
 The IBVP:
 
@@ -100,8 +100,6 @@ The IBVP:
 		u(L, t) = 0
 	\end{cases}
 \end{equation}
-
-#### Separation of variables
 
 Let
 
@@ -192,13 +190,13 @@ Consider a slightly damped vibrating string that satisfies:
 	\rho_0 \frac{d^2u}{dt^2} = T_0 \frac{d^2u}{dx^2} - \beta \frac{du}{dt}
 \end{equation}
 
-### Part a
+## Part a
 
-Why must the parameter $\beta > 0$?
+#### Why must the parameter $\beta > 0$?
 
 The parameter $\beta$ must be positive, because this is the frictional coefficient. If $\beta < 0$ the amplitude of the vibrating string would blow up to infinity as time progresses instead of converging to zero as $t \rightarrow \infty$.
 
-### Part b
+## Part b
 
 Solve the IBVP:
 
@@ -210,7 +208,7 @@ Solve the IBVP:
 	\end{cases}
 \end{align}
 
-#### Let us non-dimensionalize the problem 
+Let us non-dimensionalize the problem 
 
 Let 
 
@@ -242,7 +240,7 @@ where $\tau$ is the characteristic time scale for (\ref{eq:vibstring}).
 
 where $L_c$ is the characteristic length scale for (\ref{eq:vibstring}).
 
-#### Let us solve the non-dimensionalized IBVP
+Let us solve the non-dimensionalized IBVP
 
 \begin{equation}\tag{6}\label{eq:nondimvibstring}
 	\begin{cases}
@@ -252,13 +250,11 @@ where $L_c$ is the characteristic length scale for (\ref{eq:vibstring}).
 	\end{cases}
 \end{equation}
 
-#### Separation of variables 
-
 Let $u(x, t) = X(x) T(t)$
 
 \begin{align}
-	XT'' - XT' = \tau^2 X''T \\
-	\frac{T'' - T'}{\tau^2 T} = \frac{X''}{X} = \lambda
+	XT'' + XT' = \tau^2 X''T \\
+	\frac{T'' + T'}{\tau^2 T} = \frac{X''}{X} = \lambda
 \end{align}
 The solution to the eigen value problem:
 $\begin{align}
@@ -282,5 +278,68 @@ the characteristic equation becomes:
 	r^2 + r - \tau^2 \lambda_n = 0 \\
 	r = -\frac{1}{2} \pm \frac{1}{2}\sqrt{1 + 4\tau^2 \lambda_n}
 \end{align}
+
+we know that $\tau^2 \lambda_n < 0$
 	
 	
+# Haberman 2.5.2
+
+## Problem definition
+
+\begin{equation}\tag{7}\label{eq-laplace}
+	\begin{cases}
+		u_{xx} + u_{yy} = 0 \\
+		u_x(0, y) = 0 & u_y(x, 0) = 0 \\
+		u_x(L, y) = 0 & u_y(x, H) = f(x)
+	\end{cases}
+\end{equation}
+
+## Part a
+
+#### Without solving this problem, explain the physical condition under which there is a solution to this problem.
+
+The steady-state condition must be maintained along the boundaries. Along $y$ from $[0, H]$ we have homogeneous boundary conditions such that the flow along left and right vertical sides of the rectangle are both zero. Along $x$ we must enforce the condition that the sum of the contributions of the flow along $x$ from $[0, L]$ also sum to zero. Thus the following solvavility criteria must be imposed in order for a solution to exist. 
+
+$$\int_0^L f(x) dx = 0$$
+
+## Part b
+
+#### Solve the problem only by separation of variables. Show that the solution exists only under the condition in part a.
+
+Let $u(x, y) = X(x)Y(y)$ such that 
+
+\begin{align}
+	-\frac{Y''}{Y} = \frac{X''}{X} = \lambda
+\end{align}
+
+Since the non-homogenous BC are in $y$ we can expect that $Y(y)$ is composed of exponentials and $X(x)$ oscillates.
+
+The eigen value problem $X'' = \lambda X \quad X'(0) = X'(L) = 0$ (Neumann boundary conditions) produces the following solutions:
+
+$$X_n(x) = \cos{(\frac{n \pi x}{L})} \quad n = 1, 2, 3, ... \quad \lambda_n = -(\frac{n \pi}{L})^2$$
+
+The ODE in the $y$ domain
+
+$$Y_n(y) = \frac{n^2 \pi^2}{L^2} Y_n(y)$$
+
+The general solution:
+
+$$Y_n(y) = c_1 \cosh{(\frac{n \pi y}{L})} + c_2 \sinh{(\frac{n \pi y}{L})}$$
+
+Enforcing the boundary conditions at $y = 0$
+
+$\begin{align}
+	Y'_n(y) &= c_1 \frac{n \pi}{L}\sinh{(\frac{n \pi y}{L})} + c_2 \frac{n \pi}{L}\cosh{(\frac{n \pi y}{L})} \\
+	Y'_n(0) &= 0 = c_2 \frac{n \pi}{L} \\
+	\Longrightarrow c_2 = 0	
+\end{align}$
+
+$\begin{align}
+	Y'_n(H) = f(x) &= c_1 \frac{n \pi}{L}\sinh{(\frac{n \pi H}{L})} \\
+	\frac{L}{n \pi}\int_0^L f(x) \sinh{(\frac{m \pi H}{L})} dx &= c_1 \frac{L}{2}  \quad \textit{orthogonality} \\
+	\Longrightarrow c_1 = \frac{2}{n \pi}\int_0^L f(x) \sinh{(\frac{m \pi H}{L})} dx
+\end{align}$
+
+The full solution to the Laplace equation with 3 homogeneous boundary conditions is thus, 
+
+$$u(x, y) = \frac{2}{n \pi} \int_0^L f(x) \sinh{(\frac{n \pi H}{L})}dx \cosh{(\frac{n \pi y}{L})} \cos{(\frac{n \pi x}{L})} \quad n = 1, 2, 3, ...$$
