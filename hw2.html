@@ -1,15 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<script src="hw2_files/libs/clipboard/clipboard.min.js"></script>
-<script src="hw2_files/libs/quarto-html/quarto.js"></script>
-<script src="hw2_files/libs/quarto-html/popper.min.js"></script>
-<script src="hw2_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="hw2_files/libs/quarto-html/anchor.min.js"></script>
-<link href="hw2_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="hw2_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="hw2_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="hw2_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="hw2_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><meta charset="utf-8">
+
+<meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
@@ -86,22 +78,24 @@ window.Quarto = {
   <ul>
   <li><a href="#haberman-2.3.8" id="toc-haberman-2.3.8" class="nav-link active" data-scroll-target="#haberman-2.3.8">Haberman 2.3.8</a>
   <ul class="collapse">
-  <li><a href="#problem-definition" id="toc-problem-definition" class="nav-link" data-scroll-target="#problem-definition">Problem definition</a>
-  <ul class="collapse">
+  <li><a href="#problem-definition" id="toc-problem-definition" class="nav-link" data-scroll-target="#problem-definition">Problem definition</a></li>
   <li><a href="#part-a" id="toc-part-a" class="nav-link" data-scroll-target="#part-a">Part a</a></li>
   <li><a href="#part-b" id="toc-part-b" class="nav-link" data-scroll-target="#part-b">Part b</a></li>
   </ul></li>
-  </ul></li>
   <li><a href="#haberman-4.4.3" id="toc-haberman-4.4.3" class="nav-link" data-scroll-target="#haberman-4.4.3">Haberman 4.4.3</a>
   <ul class="collapse">
-  <li><a href="#problem-definition-1" id="toc-problem-definition-1" class="nav-link" data-scroll-target="#problem-definition-1">Problem definition</a>
-  <ul class="collapse">
+  <li><a href="#problem-definition-1" id="toc-problem-definition-1" class="nav-link" data-scroll-target="#problem-definition-1">Problem definition</a></li>
   <li><a href="#part-a-1" id="toc-part-a-1" class="nav-link" data-scroll-target="#part-a-1">Part a</a></li>
   <li><a href="#part-b-1" id="toc-part-b-1" class="nav-link" data-scroll-target="#part-b-1">Part b</a></li>
   </ul></li>
+  <li><a href="#haberman-2.5.2" id="toc-haberman-2.5.2" class="nav-link" data-scroll-target="#haberman-2.5.2">Haberman 2.5.2</a>
+  <ul class="collapse">
+  <li><a href="#problem-definition-2" id="toc-problem-definition-2" class="nav-link" data-scroll-target="#problem-definition-2">Problem definition</a></li>
+  <li><a href="#part-a-2" id="toc-part-a-2" class="nav-link" data-scroll-target="#part-a-2">Part a</a></li>
+  <li><a href="#part-b-2" id="toc-part-b-2" class="nav-link" data-scroll-target="#part-b-2">Part b</a></li>
   </ul></li>
   </ul>
-<div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/KevySilb/AM212"><i class="bi bi-github"></i></a></li></ul></div><div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/KevySilb/AM212"><i class="bi bi-github"></i></a></li></ul></div></nav>
+<div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/KevySilb/AM212"><i class="bi bi-github"></i></a></li></ul></div></nav>
 </div>
 <main class="content" id="quarto-document-content">
 
@@ -155,9 +149,11 @@ window.Quarto = {
         u(L, t) = 0
     \end{cases}
 \end{equation}\]</span></p>
-<section id="part-a" class="level3">
-<h3 class="anchored" data-anchor-id="part-a">Part a</h3>
-<p>What are the possible equilibrium temperature distributions if <span class="math inline">\(\alpha &gt; 0\)</span>?</p>
+</section>
+<section id="part-a" class="level2">
+<h2 class="anchored" data-anchor-id="part-a">Part a</h2>
+<section id="what-are-the-possible-equilibrium-temperature-distributions-if-alpha-0" class="level4">
+<h4 class="anchored" data-anchor-id="what-are-the-possible-equilibrium-temperature-distributions-if-alpha-0">What are the possible equilibrium temperature distributions if <span class="math inline">\(\alpha &gt; 0\)</span>?</h4>
 <p>An equilibrium temperature distribution is such that the time derivative of temperature is zero (<span class="math inline">\(u_t = 0\)</span>). Let us solve the homogenous BVP:</p>
 <p><span class="math display">\[\begin{equation}\tag{2}\label{eq:steady}
     ku_{xx} - \alpha u = 0, u(0) = 0, u(L) = 0
@@ -193,9 +189,11 @@ window.Quarto = {
 <p>This leaves us with only a trivial solution <span class="math inline">\(u(x) = 0\)</span>.</p>
 <p>Thus if <span class="math inline">\(\alpha\)</span> is strictly positive the only possible equilibrium temperature distribution is zero everywhere.</p>
 </section>
-<section id="part-b" class="level3">
-<h3 class="anchored" data-anchor-id="part-b">Part b</h3>
-<p>Solve the time dependent problem with IC <span class="math inline">\(u(x, 0) = f(x)\)</span> if <span class="math inline">\(\alpha &gt; 0\)</span> and analyze temperature as <span class="math inline">\(t \rightarrow \infty\)</span> and compare with part a.</p>
+</section>
+<section id="part-b" class="level2">
+<h2 class="anchored" data-anchor-id="part-b">Part b</h2>
+<section id="solve-the-time-dependent-problem-with-ic-ux-0-fx-if-alpha-0-and-analyze-temperature-as-t-rightarrow-infty-and-compare-with-part-a." class="level4">
+<h4 class="anchored" data-anchor-id="solve-the-time-dependent-problem-with-ic-ux-0-fx-if-alpha-0-and-analyze-temperature-as-t-rightarrow-infty-and-compare-with-part-a.">Solve the time dependent problem with IC <span class="math inline">\(u(x, 0) = f(x)\)</span> if <span class="math inline">\(\alpha &gt; 0\)</span> and analyze temperature as <span class="math inline">\(t \rightarrow \infty\)</span> and compare with part a.</h4>
 <p>The IBVP:</p>
 <p><span class="math display">\[\begin{equation}\tag{3}\label{eq:ibvp}
     \begin{cases}
@@ -205,8 +203,6 @@ window.Quarto = {
         u(L, t) = 0
     \end{cases}
 \end{equation}\]</span></p>
-<section id="separation-of-variables" class="level4">
-<h4 class="anchored" data-anchor-id="separation-of-variables">Separation of variables</h4>
 <p>Let</p>
 <p><span class="math display">\[\begin{align}
     u(x, t) &amp;= X(x)T(t) \\
@@ -262,7 +258,6 @@ a_n &amp;= \frac{2}{L} \int_0^L f(x) \sin{(\frac{n \pi x}{L})}dx
 </section>
 </section>
 </section>
-</section>
 <section id="haberman-4.4.3" class="level1">
 <h1>Haberman 4.4.3</h1>
 <section id="problem-definition-1" class="level2">
@@ -271,13 +266,16 @@ a_n &amp;= \frac{2}{L} \int_0^L f(x) \sin{(\frac{n \pi x}{L})}dx
 <p><span class="math display">\[\begin{equation}\tag{5}\label{eq:vibstring}
     \rho_0 \frac{d^2u}{dt^2} = T_0 \frac{d^2u}{dx^2} - \beta \frac{du}{dt}
 \end{equation}\]</span></p>
-<section id="part-a-1" class="level3">
-<h3 class="anchored" data-anchor-id="part-a-1">Part a</h3>
-<p>Why must the parameter <span class="math inline">\(\beta &gt; 0\)</span>?</p>
+</section>
+<section id="part-a-1" class="level2">
+<h2 class="anchored" data-anchor-id="part-a-1">Part a</h2>
+<section id="why-must-the-parameter-beta-0" class="level4">
+<h4 class="anchored" data-anchor-id="why-must-the-parameter-beta-0">Why must the parameter <span class="math inline">\(\beta &gt; 0\)</span>?</h4>
 <p>The parameter <span class="math inline">\(\beta\)</span> must be positive, because this is the frictional coefficient. If <span class="math inline">\(\beta &lt; 0\)</span> the amplitude of the vibrating string would blow up to infinity as time progresses instead of converging to zero as <span class="math inline">\(t \rightarrow \infty\)</span>.</p>
 </section>
-<section id="part-b-1" class="level3">
-<h3 class="anchored" data-anchor-id="part-b-1">Part b</h3>
+</section>
+<section id="part-b-1" class="level2">
+<h2 class="anchored" data-anchor-id="part-b-1">Part b</h2>
 <p>Solve the IBVP:</p>
 <p><span class="math display">\[\begin{align}
     \begin{cases}
@@ -286,8 +284,7 @@ a_n &amp;= \frac{2}{L} \int_0^L f(x) \sin{(\frac{n \pi x}{L})}dx
         u(x, 0) = f(x) &amp; \frac{d}{dt}u(x, 0) = g(x)
     \end{cases}
 \end{align}\]</span></p>
-<section id="let-us-non-dimensionalize-the-problem" class="level4">
-<h4 class="anchored" data-anchor-id="let-us-non-dimensionalize-the-problem">Let us non-dimensionalize the problem</h4>
+<p>Let us non-dimensionalize the problem</p>
 <p>Let</p>
 <p><span class="math display">\[\begin{align}
     &amp;\hat{u} = \frac{u}{u_s} \Longrightarrow u = \hat{u}u_s
@@ -295,39 +292,31 @@ a_n &amp;= \frac{2}{L} \int_0^L f(x) \sin{(\frac{n \pi x}{L})}dx
     &amp;\hat{t} = \frac{t}{t_s} \Longrightarrow u = \hat{t}t_s
 \end{align}\]</span></p>
 <p><span class="math display">\[\begin{align}
-    \rho_0 \frac{d^2u}{dt^2} -T_0 \frac{d^2u}{dx^2} +\beta \frac{du}{dt} = 0 \\
-    \frac{\rho_0 u_s}{t_s^2}\frac{d^2\hat{u}}{d\hat{t}^2} - \frac{T_0 u_s}{x_s^2}\frac{d^2\hat{u}}{d\hat{x}^2} + \beta\frac{u_s}{t_s}\big(\frac{d\hat{u}}{d\hat{t}}\big) = 0 \\
-    \frac{d^2\hat{u}}{d\hat{t}^2} - \frac{T_0 t_s^2}{\rho_0 x_s^2}\frac{d^2\hat{u}}{d\hat{x}^2} + \beta\frac{t_s}{\rho_0}\big(\frac{d\hat{u}}{d\hat{t}}\big) = 0
+    \frac{\rho_0 u_s}{t_s^2}\frac{d^2 \hat{u}}{d\hat{t}^2} + \beta \frac{u_s}{t_s} \frac{d\hat{u}}{\hat{t}} = T_0 \frac{u_s}{x_s^2} \frac{d^2 \hat{u}}{d\hat{x}^2} \\
+    \frac{d^2 \hat{u}}{d \hat{t}^2} + \frac{\beta}{\rho_0} t_s \frac{d\hat{u}}{d\hat{t}} = \frac{T_0}{\rho_0} \frac{t_s^2}{x_s^2} \frac{d^2\hat{u}}{d \hat{x}^2}
 \end{align}\]</span></p>
 <p>Let</p>
 <p><span class="math display">\[\begin{align}
-    \frac{\beta t_s}{\rho_0} = 1 \\
     t_s = \tau = \frac{\rho_0}{\beta}
 \end{align}\]</span></p>
 <p>where <span class="math inline">\(\tau\)</span> is the characteristic time scale for (<span class="math inline">\(\ref{eq:vibstring}\)</span>).</p>
 <p><span class="math display">\[\begin{align}
-    \frac{T_0}{\rho_0 x_s^2} = 1 \\
-    x_s = L_c = \sqrt{\frac{T_0}{\rho_0}}
+    x_s = L_c = \sqrt{\frac{T_0 \rho_0}{\beta^2}}
 \end{align}\]</span></p>
 <p>where <span class="math inline">\(L_c\)</span> is the characteristic length scale for (<span class="math inline">\(\ref{eq:vibstring}\)</span>).</p>
-</section>
-<section id="let-us-solve-the-non-dimensionalized-ibvp" class="level4">
-<h4 class="anchored" data-anchor-id="let-us-solve-the-non-dimensionalized-ibvp">Let us solve the non-dimensionalized IBVP</h4>
+<p>Let us solve the non-dimensionalized IBVP</p>
 <p><span class="math display">\[\begin{equation}\tag{6}\label{eq:nondimvibstring}
     \begin{cases}
-        u_{tt} + u_t = \tau^2 u_{xx} \\
+        u_{tt} + u_t = u_{xx} \\
         u(0, t) = 0 &amp; u(L, t) = 0 \\
         u(x, 0) = f(x) &amp; u_t(x, 0) = g(x)
     \end{cases}
 \end{equation}\]</span></p>
-</section>
-<section id="separation-of-variables-1" class="level4">
-<h4 class="anchored" data-anchor-id="separation-of-variables-1">Separation of variables</h4>
 <p>Let <span class="math inline">\(u(x, t) = X(x) T(t)\)</span></p>
 <p><span class="math display">\[\begin{align}
-    XT'' - XT' = \tau^2 X''T \\
-    \frac{T'' - T'}{\tau^2 T} = \frac{X''}{X} = \lambda
-\end{align}\]</span> The solution to the eigen value problem: <span class="math inline">\(\begin{align}
+    \frac{T'' + T'}{T} = \frac{X''}{X} = -\lambda
+\end{align}\]</span></p>
+<p>The solution to the eigen value problem: <span class="math inline">\(\begin{align}
     \begin{cases}
         X'' = \lambda X \\
         X(0) = X(L) = 0
@@ -339,11 +328,80 @@ a_n &amp;= \frac{2}{L} \int_0^L f(x) \sin{(\frac{n \pi x}{L})}dx
     T'' + T' = \tau^2 \lambda T
 \end{align}\)</span></p>
 <p>the characteristic equation becomes:</p>
+<p><span class="math display">\[r^2 + r + \frac{n^2\pi^2}{\hat{L}} = 0 \quad \text{where } \hat{L} = \frac{L}{L_c}\]</span></p>
+<p>where the roots of the characteristic polynomial is:</p>
+<p><span class="math inline">\(\begin{align}
+    r_{1, 2} = \frac{-1}{2} \pm \frac{1}{2}\sqrt{1 - \frac{4n^2\pi^2}{\hat{L}^2}}
+\end{align}\)</span></p>
+<p>Assuming the frictional coefficient <span class="math inline">\(\beta\)</span> is small where <span class="math inline">\(\beta^2 &lt; \frac{4\pi^2\rho_0T_0}{L^2}\)</span> let us plug in <span class="math inline">\(\hat{L}\)</span> to check if the roots are complex.</p>
+<p>The contents inside of the square root:</p>
 <p><span class="math display">\[\begin{align}
-    r^2 + r - \tau^2 \lambda_n = 0 \\
-    r = -\frac{1}{2} \pm \frac{1}{2}\sqrt{1 + 4\tau^2 \lambda_n}
+    1 - \frac{4n^2\pi^2}{\hat{L}^2} &amp;= 1 - \frac{4n^2\pi^2}{(\frac{L}{L_c})^2} \\
+    &amp;= 1 - \frac{4n^2\pi^2}{(\frac{L}{\sqrt{\frac{T_0 \rho_0}{\beta^2}}})^2} \\
+    &amp;= 1 - \frac{4n^2\pi^2\rho_0T_0}{\beta^2 L^2}
 \end{align}\]</span></p>
+<p>since the denominator <span class="math inline">\(\beta^2 L^2\)</span> is less than the numerator we know that the contents inside the square root is always negative. Thus we have a pair of complex roots and the general solution can be written as:</p>
+<p><span class="math display">\[\begin{align}
+    T(t) = e^{-\frac{\hat{t}}{2}}\left(a_n \cos{(\omega t)} + b_n \sin{(\omega t)}\right) \quad \text{where } \omega = \frac{1}{2} \sqrt{\frac{4n^2\pi^2}{\hat{L}} - 1}
+\end{align}\]</span></p>
+<p>for initial conditions <span class="math inline">\(T(0) = f(x) \quad T'(0) = g(x)\)</span> we have:</p>
+<p><span class="math display">\[\begin{align}
+    T(0) = f(x) = a_n \\
+    T'(0) = g(x) &amp;= \frac{1}{2}\left(b_n2\omega - f(x)\right)\\
+    b_n &amp;= \frac{2g(x) + f(x)}{2\omega}
+\end{align}\]</span></p>
+<p>The final solution can be written as:</p>
+<p><span class="math display">\[u(x, t) = e^{-\frac{\hat{t}}{2}} \sum_{n=1}^{\infty} \sin{(\frac{n \pi x}{\hat{L}})}\left(f(x) \cos{(\omega_n t)} + \frac{2g(x) + f(x)}{2\omega_n}\sin{(\omega_n t)}\right) \quad \text{where } \omega_n = \frac{1}{2} \sqrt{\frac{4n^2\pi^2}{\hat{L}} - 1}\]</span></p>
 </section>
+</section>
+<section id="haberman-2.5.2" class="level1">
+<h1>Haberman 2.5.2</h1>
+<section id="problem-definition-2" class="level2">
+<h2 class="anchored" data-anchor-id="problem-definition-2">Problem definition</h2>
+<p><span class="math display">\[\begin{equation}\tag{7}\label{eq-laplace}
+    \begin{cases}
+        u_{xx} + u_{yy} = 0 \\
+        u_x(0, y) = 0 &amp; u_y(x, 0) = 0 \\
+        u_x(L, y) = 0 &amp; u_y(x, H) = f(x)
+    \end{cases}
+\end{equation}\]</span></p>
+</section>
+<section id="part-a-2" class="level2">
+<h2 class="anchored" data-anchor-id="part-a-2">Part a</h2>
+<section id="without-solving-this-problem-explain-the-physical-condition-under-which-there-is-a-solution-to-this-problem." class="level4">
+<h4 class="anchored" data-anchor-id="without-solving-this-problem-explain-the-physical-condition-under-which-there-is-a-solution-to-this-problem.">Without solving this problem, explain the physical condition under which there is a solution to this problem.</h4>
+<p>The steady-state condition must be maintained along the boundaries. Along <span class="math inline">\(y\)</span> from <span class="math inline">\([0, H]\)</span> we have homogeneous boundary conditions such that the flow along left and right vertical sides of the rectangle are both zero. Along <span class="math inline">\(x\)</span> we must enforce the condition that the sum of the contributions of the flow along <span class="math inline">\(x\)</span> from <span class="math inline">\([0, L]\)</span> also sum to zero. Thus the following solvavility criteria must be imposed in order for a solution to exist.</p>
+<p><span class="math display">\[\int_0^L f(x) dx = 0\]</span></p>
+</section>
+</section>
+<section id="part-b-2" class="level2">
+<h2 class="anchored" data-anchor-id="part-b-2">Part b</h2>
+<section id="solve-the-problem-only-by-separation-of-variables.-show-that-the-solution-exists-only-under-the-condition-in-part-a." class="level4">
+<h4 class="anchored" data-anchor-id="solve-the-problem-only-by-separation-of-variables.-show-that-the-solution-exists-only-under-the-condition-in-part-a.">Solve the problem only by separation of variables. Show that the solution exists only under the condition in part a.</h4>
+<p>Let <span class="math inline">\(u(x, y) = X(x)Y(y)\)</span> such that</p>
+<p><span class="math display">\[\begin{align}
+    -\frac{Y''}{Y} = \frac{X''}{X} = \lambda
+\end{align}\]</span></p>
+<p>Since the non-homogenous BC are in <span class="math inline">\(y\)</span> we can expect that <span class="math inline">\(Y(y)\)</span> is composed of exponentials and <span class="math inline">\(X(x)\)</span> oscillates.</p>
+<p>The eigen value problem <span class="math inline">\(X'' = \lambda X \quad X'(0) = X'(L) = 0\)</span> (Neumann boundary conditions) produces the following solutions:</p>
+<p><span class="math display">\[X_n(x) = \cos{(\frac{n \pi x}{L})} \quad n = 1, 2, 3, ... \quad \lambda_n = -(\frac{n \pi}{L})^2\]</span></p>
+<p>The ODE in the <span class="math inline">\(y\)</span> domain</p>
+<p><span class="math display">\[Y_n(y) = \frac{n^2 \pi^2}{L^2} Y_n(y)\]</span></p>
+<p>The general solution:</p>
+<p><span class="math display">\[Y_n(y) = c_1 \cosh{(\frac{n \pi y}{L})} + c_2 \sinh{(\frac{n \pi y}{L})}\]</span></p>
+<p>Enforcing the boundary conditions at <span class="math inline">\(y = 0\)</span></p>
+<p><span class="math inline">\(\begin{align}
+    Y'_n(y) &amp;= c_1 \frac{n \pi}{L}\sinh{(\frac{n \pi y}{L})} + c_2 \frac{n \pi}{L}\cosh{(\frac{n \pi y}{L})} \\
+    Y'_n(0) &amp;= 0 = c_2 \frac{n \pi}{L} \\
+    \Longrightarrow c_2 = 0
+\end{align}\)</span></p>
+<p><span class="math inline">\(\begin{align}
+    Y'_n(H) = f(x) &amp;= c_1 \frac{n \pi}{L}\sinh{(\frac{n \pi H}{L})} \\
+    \frac{L}{n \pi}\int_0^L f(x) \sinh{(\frac{m \pi H}{L})} dx &amp;= c_1 \frac{L}{2}  \quad \textit{orthogonality} \\
+    \Longrightarrow c_1 = \frac{2}{n \pi}\int_0^L f(x) \sinh{(\frac{m \pi H}{L})} dx
+\end{align}\)</span></p>
+<p>The full solution to the Laplace equation with 3 homogeneous boundary conditions is thus,</p>
+<p><span class="math display">\[u(x, y) = \frac{2}{n \pi} \int_0^L f(x) \sinh{(\frac{n \pi H}{L})}dx \cosh{(\frac{n \pi y}{L})} \cos{(\frac{n \pi x}{L})} \quad n = 1, 2, 3, ...\]</span></p>
 </section>
 </section>
 </section>

@@ -219,23 +219,20 @@ Let
 \end{align}
 
 \begin{align}
-	\rho_0 \frac{d^2u}{dt^2} -T_0 \frac{d^2u}{dx^2} +\beta \frac{du}{dt} = 0 \\
-	\frac{\rho_0 u_s}{t_s^2}\frac{d^2\hat{u}}{d\hat{t}^2} - \frac{T_0 u_s}{x_s^2}\frac{d^2\hat{u}}{d\hat{x}^2} + \beta\frac{u_s}{t_s}\big(\frac{d\hat{u}}{d\hat{t}}\big) = 0 \\
-	\frac{d^2\hat{u}}{d\hat{t}^2} - \frac{T_0 t_s^2}{\rho_0 x_s^2}\frac{d^2\hat{u}}{d\hat{x}^2} + \beta\frac{t_s}{\rho_0}\big(\frac{d\hat{u}}{d\hat{t}}\big) = 0
+	\frac{\rho_0 u_s}{t_s^2}\frac{d^2 \hat{u}}{d\hat{t}^2} + \beta \frac{u_s}{t_s} \frac{d\hat{u}}{\hat{t}} = T_0 \frac{u_s}{x_s^2} \frac{d^2 \hat{u}}{d\hat{x}^2} \\
+	\frac{d^2 \hat{u}}{d \hat{t}^2} + \frac{\beta}{\rho_0} t_s \frac{d\hat{u}}{d\hat{t}} = \frac{T_0}{\rho_0} \frac{t_s^2}{x_s^2} \frac{d^2\hat{u}}{d \hat{x}^2}
 \end{align}
 
 Let
 
 \begin{align}
-	\frac{\beta t_s}{\rho_0} = 1 \\
 	t_s = \tau = \frac{\rho_0}{\beta}
 \end{align}
 
 where $\tau$ is the characteristic time scale for (\ref{eq:vibstring}).
 
 \begin{align}
-	\frac{T_0}{\rho_0 x_s^2} = 1 \\
-	x_s = L_c = \sqrt{\frac{T_0}{\rho_0}}
+	x_s = L_c = \sqrt{\frac{T_0 \rho_0}{\beta^2}}
 \end{align}
 
 where $L_c$ is the characteristic length scale for (\ref{eq:vibstring}).
@@ -244,7 +241,7 @@ Let us solve the non-dimensionalized IBVP
 
 \begin{equation}\tag{6}\label{eq:nondimvibstring}
 	\begin{cases}
-		u_{tt} + u_t = \tau^2 u_{xx} \\
+		u_{tt} + u_t = u_{xx} \\
 		u(0, t) = 0 & u(L, t) = 0 \\
 		u(x, 0) = f(x) & u_t(x, 0) = g(x)
 	\end{cases}
@@ -253,9 +250,9 @@ Let us solve the non-dimensionalized IBVP
 Let $u(x, t) = X(x) T(t)$
 
 \begin{align}
-	XT'' + XT' = \tau^2 X''T \\
-	\frac{T'' + T'}{\tau^2 T} = \frac{X''}{X} = \lambda
+	\frac{T'' + T'}{T} = \frac{X''}{X} = -\lambda
 \end{align}
+
 The solution to the eigen value problem:
 $\begin{align}
 	\begin{cases}
@@ -274,13 +271,41 @@ $\begin{align}
 
 the characteristic equation becomes:
 
+$$r^2 + r + \frac{n^2\pi^2}{\hat{L}} = 0 \quad \text{where } \hat{L} = \frac{L}{L_c}$$
+
+where the roots of the characteristic polynomial is:
+
+$\begin{align}
+	r_{1, 2} = \frac{-1}{2} \pm \frac{1}{2}\sqrt{1 - \frac{4n^2\pi^2}{\hat{L}^2}}
+\end{align}$
+
+Assuming the frictional coefficient $\beta$ is small where $\beta^2 < \frac{4\pi^2\rho_0T_0}{L^2}$ let us plug in $\hat{L}$ to check if the roots are complex. 
+
+The contents inside of the square root:
+
 \begin{align}
-	r^2 + r - \tau^2 \lambda_n = 0 \\
-	r = -\frac{1}{2} \pm \frac{1}{2}\sqrt{1 + 4\tau^2 \lambda_n}
+	1 - \frac{4n^2\pi^2}{\hat{L}^2} &= 1 - \frac{4n^2\pi^2}{(\frac{L}{L_c})^2} \\
+	&= 1 - \frac{4n^2\pi^2}{(\frac{L}{\sqrt{\frac{T_0 \rho_0}{\beta^2}}})^2} \\
+	&= 1 - \frac{4n^2\pi^2\rho_0T_0}{\beta^2 L^2}
 \end{align}
 
-we know that $\tau^2 \lambda_n < 0$
-	
+since the denominator $\beta^2 L^2$ is less than the numerator we know that the contents inside the square root is always negative. Thus we have a pair of complex roots and the general solution can be written as:
+
+\begin{align}
+	T(t) = e^{-\frac{\hat{t}}{2}}\left(a_n \cos{(\omega t)} + b_n \sin{(\omega t)}\right) \quad \text{where } \omega = \frac{1}{2} \sqrt{\frac{4n^2\pi^2}{\hat{L}} - 1}
+\end{align}
+
+for initial conditions $T(0) = f(x) \quad T'(0) = g(x)$ we have:
+
+\begin{align}
+	T(0) = f(x) = a_n \\
+	T'(0) = g(x) &= \frac{1}{2}\left(b_n2\omega - f(x)\right)\\
+	b_n &= \frac{2g(x) + f(x)}{2\omega}
+\end{align}
+
+The final solution can be written as:
+
+$$u(x, t) = e^{-\frac{\hat{t}}{2}} \sum_{n=1}^{\infty} \sin{(\frac{n \pi x}{\hat{L}})}\left(f(x) \cos{(\omega_n t)} + \frac{2g(x) + f(x)}{2\omega_n}\sin{(\omega_n t)}\right) \quad \text{where } \omega_n = \frac{1}{2} \sqrt{\frac{4n^2\pi^2}{\hat{L}} - 1}$$
 	
 # Haberman 2.5.2
 
